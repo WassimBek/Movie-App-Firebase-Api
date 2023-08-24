@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app_1/Home.dart';
+import 'package:movie_app_1/view/Search/searchBody.dart';
 
 class SearchBarr extends StatefulWidget {
   const SearchBarr({super.key});
@@ -13,6 +14,8 @@ class _SearchBarState extends State<SearchBarr> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff181818),
+        elevation: 0.0,
         title: Text("Search Bar"),
         actions: [
           IconButton(
@@ -23,6 +26,7 @@ class _SearchBarState extends State<SearchBarr> {
           )
         ],
       ),
+      body: SearchBody(),
     );
   }
 }

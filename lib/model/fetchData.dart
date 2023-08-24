@@ -4,22 +4,20 @@ import 'dart:convert';
 import 'classMovie.dart';
 
 Future fetchData() async {
-  const url =
-      'https://netflix54.p.rapidapi.com/search/?query=stranger&offset=0&limit_titles=50&limit_suggestions=20&lang=en';
+  const url = "https://imdb-top-100-movies.p.rapidapi.com/";
   final headers = {
-    'X-RapidAPI-Key': '5f1710e8efmshc10077f54c45317p11365ejsn209b0795e811',
-    'X-RapidAPI-Host': 'netflix54.p.rapidapi.com'
+    'X-RapidAPI-Key': 'e6b5e68370mshc8ffac1e6cd3cccp10ecd7jsn1cf2318de119',
+		'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
   };
 
   final response = await http.get(Uri.parse(url), headers: headers);
   final jsonData = jsonDecode(response.body);
   for (var eachMovie in jsonData) {
     final movie = getData(
-      movieImg: eachMovie["jawSummary"]["backgroundImage"]["url"],
-      movieName: eachMovie["jawSummary"]["title"],
-      textOfMovie: eachMovie["jawSummary"]["contextualSynopsis"]["text"],
-      episodeMovie: eachMovie["jawSummary"]["episodeCount"] ,
-      seasonMovie: eachMovie["jawSummary"]["seasonCount"] ,
+      movieImg: eachMovie["image"],
+      movieName: eachMovie["title"],
+      textOfMovie: eachMovie["description"],
+      
     );
     movies.add(movie);
   }

@@ -19,7 +19,7 @@ class _ShowsTrendingState extends State<ShowsTrending> {
         Container(
           height: 250,
           child: ListView.builder(
-              itemCount: 25,
+              itemCount: 50,
               physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,
@@ -39,8 +39,7 @@ GestureDetector moviePoster(int index) {
     onTap: () => Get.to(() => MovieContent(
           imageSrc: movies[index].movieImg,
           movieName: movies[index].movieName,
-          epCount: movies[index].episodeMovie,
-          snCount: movies[index].seasonMovie,
+          textMovie: movies[index].textOfMovie,
         )),
     child: Hero(
       tag: 'image-Name-${movies[index].movieImg}',

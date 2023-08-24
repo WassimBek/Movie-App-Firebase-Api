@@ -1,70 +1,45 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:movie_app_1/Home.dart';
 
 class MovieContent extends StatelessWidget {
-  const MovieContent(
-      {this.imageSrc, this.movieName, this.epCount, this.snCount});
+  const MovieContent({this.imageSrc, this.movieName, this.textMovie});
   final String? imageSrc;
   final String? movieName;
-  final int? epCount;
-  final int? snCount;
+  final String? textMovie;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          backgroundColor: Color(0xff181818),
+        ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Stack(
-              children: [
-                Container(
-                  width: double.infinity,
-                  height: 350,
-                  child: Hero(
-                      tag: 'image-Name-${imageSrc}',
-                      child: Image.network(
-                        imageSrc.toString(),
-                        fit: BoxFit.cover,
-                      )),
-                ),
-                IconButton(
-                    onPressed: () {
-                      Get.off(() => HomePage());
-                    },
-                    icon: Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
-                    )),
-              ],
+            Container(
+              width: double.infinity,
+              height: 350,
+              child: Hero(
+                  tag: 'image-Name-${imageSrc}',
+                  child: Image.network(
+                    imageSrc.toString(),
+                    fit: BoxFit.fill,
+                  )),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 5, top: 10, bottom: 10),
-              child: Text(
-                movieName.toString(),
-                style: TextStyle(
-                    color: Color.fromARGB(199, 250, 248, 249),
-                    fontFamily: "Poppins",
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            if (snCount != null && epCount != null)
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: Center(
                 child: Text(
-                  "${snCount} Seasons\  .\  ${epCount} Episodes",
+                  movieName.toString(),
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Color.fromARGB(199, 250, 248, 249),
                       fontFamily: "Poppins",
-                      fontWeight: FontWeight.w400),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
+            ),
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 50.0, vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 50.0),
               child: Container(
                 width: double.infinity,
                 padding: EdgeInsets.all(20),
@@ -81,6 +56,15 @@ class MovieContent extends StatelessWidget {
                         fontSize: 17,
                         fontWeight: FontWeight.bold),
                   ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+              child: Text(
+                textMovie.toString(),
+                style: TextStyle(
+                  color: Colors.white,
                 ),
               ),
             ),

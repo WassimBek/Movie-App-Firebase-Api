@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:movie_app_1/model/classMovie.dart';
 import 'package:movie_app_1/model/fetchData.dart';
 import 'package:movie_app_1/view/Home/ShowsTrend.dart';
-import 'package:movie_app_1/view/Home/bottomNavBar.dart';
 import 'package:movie_app_1/view/Home/firstSection.dart';
 
 List<getData> movies = [];
@@ -20,7 +19,6 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xff181818),
-        bottomNavigationBar: BottomNavBar(),
         body: FutureBuilder(
           future: fetchData(),
           builder: (context, snapshot) {
@@ -41,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                         vertical: 35.0, horizontal: 5.0),
                     child: headText("Movies Trending Today"),
                   ),
-                  ShowsTrending(index: 25),
+                  ShowsTrending(index: 49),
                 ],
               );
             } else {
