@@ -2,8 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie_app_1/firebase_options.dart';
-import 'package:movie_app_1/raper.dart';
-import 'package:movie_app_1/view/setting/SettingsPage.dart';
+import 'package:movie_app_1/view/Auth/CreateAccount.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SettingPage(),
+      home: CreateAccount(),
       theme: ThemeData(canvasColor: Color(0xff181818)),
     );
   }

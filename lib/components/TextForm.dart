@@ -26,7 +26,7 @@ class TextForm extends StatelessWidget {
         enabledBorder: userField(),
         focusedBorder: userField(),
         errorBorder: OutlineInputBorder(
-          borderSide: BorderSide(
+          borderSide:const BorderSide(
             color: Colors.red,
             width: 3,
           ),

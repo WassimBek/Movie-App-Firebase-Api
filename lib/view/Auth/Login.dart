@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:movie_app_1/components/TextForm.dart';
 import 'package:movie_app_1/components/buttonStyle.dart';
 import 'package:movie_app_1/model/firebase/Auth.dart';
-import 'package:movie_app_1/view/Auth/Login.dart';
+import 'package:movie_app_1/view/Auth/CreateAccount.dart';
 
-class CreateAccount extends StatelessWidget {
-  CreateAccount({super.key});
+class LoginPage extends StatelessWidget {
+  LoginPage({super.key});
   String email = "";
   String password = "";
   @override
@@ -22,12 +22,12 @@ class CreateAccount extends StatelessWidget {
                 child:const Column(
                   children: [
                     Icon(
-                      Icons.lock,
+                      Icons.lock_open ,
                       color: Colors.white,
                       size: 150,
                     ),
                     Text(
-                      "Create Account",
+                      "LOGIN",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 30,
@@ -38,7 +38,7 @@ class CreateAccount extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
+             Container(
                 child: Padding(
                   padding: const EdgeInsets.all(25.0),
                   child: Column(
@@ -64,12 +64,12 @@ class CreateAccount extends StatelessWidget {
                     MyButton(
                         title: "LOGIN",
                         onTap: () async {
-                          await createUser(context, email, password);
+                          await signInUser(context, email, password);
                         }),
                     MyButton(
-                        title: "SINGIN",
+                        title: "Create Account",
                         onTap: () {
-                          Get.to(LoginPage());
+                          Get.to(CreateAccount());
                         }),
                   ],
                 ),

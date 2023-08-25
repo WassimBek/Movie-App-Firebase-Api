@@ -8,8 +8,8 @@ class RouterPage extends StatefulWidget {
   int selected_index = 0;
   List<Widget> pages = [
     HomePage(),
-    SearchBarr(),
-    SettingPage(),
+    const SearchBarr(),
+    const SettingPage(),
   ];
   @override
   State<RouterPage> createState() => _RouterPageState();
@@ -30,17 +30,17 @@ class _RouterPageState extends State<RouterPage> {
         iconSize: 27,
         unselectedItemColor: Color(0xff808080),
         unselectedFontSize: 14,
-        unselectedLabelStyle: TextStyle(
+        unselectedLabelStyle:const TextStyle(
           color: Color(0xffff6348),
           fontFamily: "Poppins",
         ),
         selectedItemColor: Color(0xffff6348),
         type: BottomNavigationBarType.fixed,
-        selectedLabelStyle: TextStyle(
+        selectedLabelStyle:const TextStyle(
           color: Color(0xffff6348),
           fontFamily: "Poppins",
         ),
-        items: [
+        items:const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
               icon: Icon(Icons.search_outlined), label: "Search"),

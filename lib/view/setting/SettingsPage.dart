@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:movie_app_1/components/buttonStyle.dart';
 import 'package:movie_app_1/view/Auth/CreateAccount.dart';
+import 'package:movie_app_1/view/Auth/Login.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
@@ -25,7 +26,11 @@ class SettingPage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 50.0),
-                child: MyButton(title: "LOGIN", onTap: () {}),
+                child: MyButton(
+                    title: "LOGIN",
+                    onTap: () {
+                      Get.to(LoginPage());
+                    }),
               ),
               SettingTile(tileIcon: Icons.list, tileText: "My List"),
               SettingTile(tileIcon: Icons.settings, tileText: "App Settings"),
@@ -54,7 +59,7 @@ Widget SettingTile({IconData? tileIcon, String? tileText}) {
     ),
     title: Text(
       tileText.toString(),
-      style: TextStyle(
+      style:const TextStyle(
         color: Colors.white,
       ),
     ),
